@@ -3,7 +3,7 @@ package repl_test
 import (
 	"testing"
 
-	"github.com/mik242/pokedex/repl"
+	"github.com/242terk242/pokedex/repl"
 )
 
 func TestCleanInput(t *testing.T) {

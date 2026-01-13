@@ -4,14 +4,13 @@ import (
 	"strings"
 )
 
-func cleanInput(text string) []string {
+func CleanInput(text string) []string {
 	var r []string
-	text_string := strings.Split(text, `,`)
+	trim_string := strings.TrimSpace(text)
+	text_string := strings.Fields(trim_string)
 
 	for _, str := range text_string {
-		if str != "" {
-			r = append(r, strings.ToLower(str))
-		}
+		r = append(r, strings.ToLower(str))
 	}
 
 	return r
