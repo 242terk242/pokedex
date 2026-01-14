@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"os"
 
+	"github.com/242terk242/pokedex/commands"
 	"github.com/242terk242/pokedex/repl"
 )
 
@@ -15,7 +16,15 @@ func main() {
 	for {
 		fmt.Print("Pokedex > ")
 		scanner.Scan()
-		fmt.Printf("Your command was: %s\n", repl.CleanInput(scanner.Text())[0])
+
+		switch repl.CleanInput(scanner.Text())[0] {
+		case "exit":
+			commands.Exit()
+		case "help":
+			commands.Help()
+		default:
+			fmt.Println("Unknown command.")
+		}
 
 	}
 
